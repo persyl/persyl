@@ -12,6 +12,16 @@
     var op = document.getElementById('output');
     if (window.Worker) {
         op.innerHTML = 'WebWorker is supported.';
+        onmessage = function(e){
+        	var msg = e.data;
+        	op.innerHTML = msg;
+        };
+
+        //Create a Worker and send a message to it
+        var ww = new Worker('worker.js');
+        ww.postmessage('Hello');
+
+
     } else {
         op.innerHTML = 'WebWorker is not supported.';
     }

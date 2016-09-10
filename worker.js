@@ -1,6 +1,6 @@
 onmessage = function(e){
 	var msg = e.data;
-	postmessage('Worker is responding on ' + msg + '!!!');
+	postMessage('Worker is responding on ' + msg + '!!!');
 };
 
-postmessage('Worker is here!');
+postMessage('Worker is here!');

@@ -12,13 +12,13 @@
     var op = document.getElementById('output');
     if (window.Worker) {
         op.innerHTML = 'WebWorker is supported.';
-        onmessage = function(e){
-        	var msg = e.data;
-        	op.innerHTML = msg;
-        };
 
         //Create a Worker and send a message to it
         var ww = new Worker('worker.js');
+        ww.onmessage = function(e){
+        	var msg = e.data;
+        	op.innerHTML = msg;
+        };
         ww.postMessage('Hello');
 
 

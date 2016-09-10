@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <title>Per Lundkvist at GitHub!</title>
-  </head>
+</head>
+
 <body>
-    More will come here later...
+    <div id="output"></div>
+    <script type="text/javascript">
+    var op = document.getElementById('output');
+    if (window.Worker) {
+        op.innerHTML = 'WebWorker is supported.';
+    } else {
+        op.innerHTML = 'WebWorker is not supported.';
+    }
+    </script>
 </body>
+
 </html>
